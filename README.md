@@ -1,5 +1,6 @@
 <h1 align="center">scripts</h1>
 <div align="center">⚙️ Automation scripts for system management 🔥</div>
+<br>
 <div align="center">
 
 ` folder structure `
