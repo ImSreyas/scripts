@@ -1,0 +1,9 @@
+if [[ $# -eq 1 ]]; then
+  if [[ $1 -eq "yazi" ]]; then
+    cargo install --locked --git https://github.com/sxyazi/yazi.git yazi-fm yazi-cli
+  else
+    echo "No update function found for $1"
+  fi
+else
+  echo "usage : update <program_name>"
+fi

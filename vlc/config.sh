@@ -12,5 +12,5 @@ fi
 
 sed -i "/$PATTERN/c\\$REPLACEMENT" "$FILE"
 
-echo "Success..."
+echo -e "\nSuccess..."
 
