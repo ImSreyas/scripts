@@ -8,8 +8,9 @@
 </div>
 
 ```shell
-├── git
-│   └── push
+├── bin
+│   ├── push
+│   └── update
 └── vlc
     └── config.sh
 
