@@ -3,6 +3,7 @@ if [[ $# -eq 1 ]]; then
     cargo install --locked --git https://github.com/sxyazi/yazi.git yazi-fm yazi-cli
   elif [[ "$1" = "zen" ]]; then
     curl -s https://updates.zen-browser.app/install.sh | bash
+    # curl -sL https://updates.zen-browser.app/appimage.sh | bash
   else
     echo "No update function found for $1"
   fi
