@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+import subprocess
+
+tools = [
+  "interest-finder"
+]
+
+print("\nTOOLS\n----------------")
+for i in range(len(tools)):
+  print(f"{i+1}) {tools[i]}")
+
+while True:
+  choice = int(input("\nselect a tool: ")) - 1
+  if choice < 0 or choice >= len(tools):
+    print("invalid choice. please try again.")
+  else: break
+subprocess.run([tools[choice]])

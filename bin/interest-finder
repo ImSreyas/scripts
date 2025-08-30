@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+import math
+
+print("\nINTEREST FINDER\n-------------------------")
+n = int(input("\nEnter the number of peoples : "))
+arr = []
+total_amount_paid = 0
+
+for i in range(n):
+  name = input(f"\nName of the person {i+1} : ")
+  amount = int(input(f"Total amount received from {name} : "))
+  map = {"name": name, "amount": amount}
+  total_amount_paid += amount
+  arr.append(map)
+
+total_interest = int(input("\nEnter the total interest received : "))
+interest_factor = total_interest / total_amount_paid
+rounded_remaining = total_interest
+
+for map in arr:
+  interest_amount = interest_factor * map["amount"]
+  interest_amount_rounded = math.floor(interest_amount)
+  rounded_remaining -= interest_amount_rounded
+
+  map["interest"] = interest_amount_rounded
+  map["power"] = interest_amount - interest_amount_rounded
+
+sorted_arr = sorted(arr, key=lambda x: x["power"], reverse=True)
+
+print("\nRESULT (FINAL AMOUNT)\n-------------------------")
+for i in range(rounded_remaining):
+  sorted_arr[i%n]["interest"] += 1
+
+distribute_amount = 0
+for map in sorted_arr:
+  print(f"{map['name']} : {map["amount"] + map["interest"]}")
+  distribute_amount += map["amount"] + map["interest"]
+
+print("-------------------------")
+print(f"Total amount to distribute : {distribute_amount}")
+print(f"Total amount received : {total_amount_paid}")
+print(f"Total interest received : {total_interest}")
+print(f"Round of amount : {rounded_remaining}")
+print()
