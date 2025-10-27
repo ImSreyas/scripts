@@ -4,9 +4,12 @@ if [[ $# -eq 1 ]]; then
   elif [[ "$1" = "zen" ]]; then
     curl -s https://updates.zen-browser.app/install.sh | bash
     # curl -sL https://updates.zen-browser.app/appimage.sh | bash
+  elif [[ "$1" = "zed" ]]; then
+    curl -f https://zed.dev/install.sh | sh
   else
     echo "No update function found for $1"
   fi
 else
   echo "usage : update <program_name>"
-fi
+fi   
+

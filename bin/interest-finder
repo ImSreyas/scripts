@@ -34,7 +34,7 @@ for i in range(rounded_remaining):
 
 distribute_amount = 0
 for map in sorted_arr:
-  print(f"{map['name']} : {map["amount"] + map["interest"]}")
+  print(f"{map['name']} : {map["amount"] + map["interest"]} ({map['amount']} + {map['interest']})")
   distribute_amount += map["amount"] + map["interest"]
 
 print("-------------------------")
